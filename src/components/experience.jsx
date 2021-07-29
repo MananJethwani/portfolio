@@ -21,9 +21,9 @@ const data = [
         heading: "Contributor to Kiwix and TPC",
         date: "",
         content: `<ul>
-        <li>Part of GSOC 2021 under Kiwix organisation comprising of 1286 students selected out of over 7000 initial applications.</li><br />
+        <li>Contributed to Openzim and Kiwix under mwoffliner project, working on enhancements like introducing webp which brought down file sizes by 15-20%</li><br />
         <li>Collaborating with a diverse team in a remote setup to deliver solutions to real-world problems powered by the latest technologies.</li><br />
-        <li>Improved kiwix-serve UI with functionality like dynamic loading using OPDS format and filters.</li></ul>`
+        <li>Collaborated with the programming club@IIITDMJ</li></ul>`
     },
     {
         heading: "Google Summer of Code <span class='green'>@kiwix</span>",
@@ -33,14 +33,6 @@ const data = [
         <li>Collaborating with a diverse team in a remote setup to deliver solutions to real-world problems powered by the latest technologies.</li><br />
         <li>Improved kiwix-serve UI with functionality like dynamic loading using OPDS format and filters.</li></ul>`
     },
-    {
-        heading: "Google Summer of Code <span class='green'>@kiwix</span>",
-        date: "Jun - Aug 2021",
-        content: `<ul>
-        <li>Part of GSOC 2021 under Kiwix organisation comprising of 1286 students selected out of over 7000 initial applications.</li><br />
-        <li>Collaborating with a diverse team in a remote setup to deliver solutions to real-world problems powered by the latest technologies.</li><br />
-        <li>Improved kiwix-serve UI with functionality like dynamic loading using OPDS format and filters.</li></ul>`
-    }
 ]
 
 

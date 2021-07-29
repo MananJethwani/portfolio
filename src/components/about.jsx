@@ -7,10 +7,10 @@ const About = () => {
         empowers people, not just businesses. I aim to deliver scalable
         applications and hence, insist over writing the sleek & efficient code
         while maintaining agreement on code-maintenance.<br /><br />I will be graduating
-        with a B.Tech in CSE from <a href="https://www.iiitdmj.ac.in/" style={{'text-decoration': 'none'}} className="red">IIITDM, Jabalpur</a> in May 2023. When I'm not
+        with a B.Tech in CSE from <a href="https://www.iiitdmj.ac.in/" style={{'textDecoration': 'none'}} className="red">IIITDM, Jabalpur</a> in May 2023. When I'm not
         building software, I like to watch anime, do a lot of gaming, and
         explore the world!<br /><br />I am an Open Source enthusiast with contributions to
-        orgs. like Kiwix and Openzim, and I was part of <a href="https://summerofcode.withgoogle.com/projects/#5158540915769344" style={{'text-decoration': 'none'}} className="red">GSOC 2021</a> under kiwix.
+        orgs. like Kiwix and Openzim, and I was part of <a href="https://summerofcode.withgoogle.com/projects/#5158540915769344" style={{'textDecoration': 'none'}} className="red">GSOC 2021</a> under kiwix.
         <br /><br />
         Here are a few technologies I've been working with recently:
       </p>

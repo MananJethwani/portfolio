@@ -8,6 +8,10 @@
   box-sizing: inherit;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   max-width: 100vw;
@@ -20,6 +24,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 code {
@@ -49,6 +54,11 @@ code {
 .logo > span {
   position: relative;
   z-index: 100;
+
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-name: moveDown;
+  animation-duration: 2s;
 }
 
 .nav_links {
@@ -79,6 +89,12 @@ code {
   list-style-type: none;
   display: inline;
   margin: 0 0 0 2vw;
+
+  opacity: 0;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+  animation-name: moveDown;
+  animation-duration: 0.3s;
 }
 
 .nav_links > ul > li > a {
@@ -105,6 +121,12 @@ code {
   justify-content: center;
   text-align: center;
   background: #6A00FC;
+
+  opacity: 0;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  animation-name: moveDown;
+  animation-duration: 0.3s;
 }
 
 .resume_button > a {
@@ -126,44 +148,54 @@ code {
 }
 
 .cube1 {
+  animation-fill-mode: forwards;
+  animation-name: scaleUp;
+  animation-duration: 0.7s;
   z-index: 2;
   position: absolute;
-  top: -6.02vh;
+  top: -65px;
   left: -6vw;
   width: 40.3vw;
-  height: 65.1vh;
 }
 
 .cube2 {
+  animation-fill-mode: forwards;
+  animation-name: scaleUp;
+  animation-duration: 0.7s;
   position: absolute;
   width: 8.7vw;
-  height: 14.35vh;
   left: 45.5vw;
-  top: 4.6vh;
+  top: 50px;
 }
 
 .cube3 {
+  animation-fill-mode: forwards;
+  animation-name: scaleUp;
+  animation-duration: 0.7s;
   position: absolute;
   width: 91px;
-  height: 91px;
   left: 58vw;
-  top: 48.7vh;
+  top: 526px;
 }
 
 .cube4 {
+  animation-fill-mode: forwards;
+  animation-name: scaleUp;
+  animation-duration: 0.7s;
   position: absolute;
   width: 82px;
-  height: 82px;
   left: 32.3vw;
-  top: 80vh;
+  top: 864px;
 }
 
 .cube5 {
+  animation-fill-mode: forwards;
+  animation-name: scaleUp;
+  animation-duration: 0.7s;
   position: absolute;
   width: 16.8vw;
-  height: 29.9vh;
   left: 78.43vw;
-  top: 30vh;
+  top: 324px;
 }
 
 .main_line {
@@ -171,9 +203,10 @@ code {
 
   position: relative;
   width: 43.54vw;
-  height: 23.61vh;
+  max-width: 600px;
+  height: 255px;
   left: 12vw;
-  top: 15vh;
+  top: 162px;
 
   font-family: Lato;
   font-style: normal;
@@ -182,15 +215,21 @@ code {
   line-height: 114px;
 
   color: #FFFFFF;
+
+  opacity: 0;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  animation-name: moveUP;
+  animation-duration: 0.5s;
 }
 
 .subtitle {
   z-index: 100;
   position: relative;
   width: 35vw;
-  height: 12.8vh;
+  height: 139px;
   left: 12vw;
-  top: 15vh;
+  top: 162px;
 
   font-family: Lato;
   font-style: normal;
@@ -199,6 +238,13 @@ code {
   line-height: 43px;
 
   color: rgba(255, 255, 255, 0.5);
+
+  opacity: 0;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  animation-name: moveUP;
+  animation-duration: 0.5s;
+  
 }
 
 .header_link {
@@ -208,7 +254,7 @@ code {
   width: 306px;
   height: 67px;
   left: 12vw;
-  top: 67vh;
+  top: 723px;
 
   font-family: Roboto;
   font-style: normal;
@@ -217,23 +263,38 @@ code {
   line-height: 35px;
 
   color: #FF0030;
+
+  opacity: 0;
+  animation-delay: 0.7s;
+  animation-fill-mode: forwards;
+  animation-name: moveUP;
+  animation-duration: 0.4s;
 }
 
 .header_image {
   position: absolute;
-  width: 393px;
-  height: 623px;
+  min-width: 350px;
+  width: 20vw;
+  max-width: 400px;
+  /* height: 623px; */
   left: 64.6vw;
-  top: 20vh;
+  top: 216px;
+
+  opacity: 0;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
 }
 
 .about {
   position: absolute;
   overflow: hidden;
   width: 100vw;
+  min-height: 1000px;
   height: 100vh;
   max-width: 100%;
-  top: 100vh;
+  top: 1000px;
   z-index: -3;
 
   background: #252229;
@@ -667,7 +728,7 @@ code {
 }
 
 .project-cards {
-  position: relative;
+  position: absolute;
   top: 35vh;
   left: 18vw;
 
@@ -796,18 +857,12 @@ code {
   .cube5 {
     left: 84vw;
   }
-  .header_link {
-    top: 80vh;
-  }
   .exp-line-2 { 
     left: 3vw;
   }
 }
 
 @media screen and (max-width: 1440px) {
-  .subtitle {
-    top: 18vh;
-  }
   .bullet_1, .bullet_2 {
     top: 83vh;
   }
@@ -837,9 +892,6 @@ code {
   .main_line {
     font-size: 70px;
   }
-  .subtitle {
-    top: 20vh;
-  }
   .about_img_2 {
     left: 65vw;
   }
@@ -852,71 +904,59 @@ code {
 
 }
 
+@keyframes moveUP {
+  0%{
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-/* .header {
-  display: grid;
-  grid-template-columns: 4fr 3fr;
-  position: relative;
-  z-index: 100;
+  100%{
+    opacity: 100%;
+    transform: translateY(0);
+  }
 }
 
-.header_content {
-  position: relative;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 1fr;
-  grid-template-rows: 2fr 1fr 1fr;
+@keyframes scaleUp{
+  0%{
+    /* transform: scale(0.1); */
+    transform: translateY(-20px);
+  }
+
+  60%{
+    transform: translate(0);
+  }
+  61%{
+    transform: scale(1);
+  }
+
+  100%{
+    -webkit-transform: scale(1.04);
+    -moz-transform: scale(1.04);
+    -o-transform: scale(1.04);
+    transform: scale(1.04);  
+    /* transform: translateY(0); */
+  }
 }
 
-.main_line {
-  position: absolute;
-  top: 10vh;
-  left: 10vw;
-  width: auto;
-  display: flex;
-  justify-content: flex-end;
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 85px;
-  line-height: 114px;
-
-  color: #FFFFFF;
+@keyframes moveDown {
+  0%{
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
 }
 
-.subtitle {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 43px;
-  
-  color: #FFFFFF;  
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
-
-.header_link {
-  text-decoration: none;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 30px;
-  line-height: 35px;
-
-  color: #FF0030;
-}
-
-.header_image_wrapper {
-  position: relative;
-}
-
-.header_image {
-  position: absolute;
-  width: auto;
-  height: 55vh;
-  top: 10vh;
-  right: 355px;
-}
-*/
 .purple {
   color: #6A00FC;
 }
