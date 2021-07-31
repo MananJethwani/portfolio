@@ -11,7 +11,7 @@ const Navbar = () => {
                 </ul>
                 <div className="resume_wrapper">
                     <div className="resume_button">
-                        <a href="../static/Resume.pdf" download>Resume</a>
+                        <a href="https://drive.google.com/file/d/1EJMJCgASaCk6jwZLEav_qECtPnv3oPp2/view" rel="noreferrer" target="_blank">Resume</a>
                     </div>
                 </div>
             </div>

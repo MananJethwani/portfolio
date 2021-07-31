@@ -26,7 +26,7 @@ const Projects = () => {
         }
     });
     return(
-        <div className="project-box">
+        <div id="work" className="project-box">
             <ScrollTrigger onEnter={enterEffectProject}>
                 <h1 className="project-heading">Few things I have been working on</h1>
                 <img src={require("../static/cube6.svg").default} className="project-cube1" alt=""/>
