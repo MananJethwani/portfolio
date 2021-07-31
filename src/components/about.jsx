@@ -1,24 +1,34 @@
 import ScrollTrigger from 'react-scroll-trigger';
+import React, { useEffect } from 'react';
 let first=true;
 
 async function enterEffectAbout() {
     if(first) {
+      for (let index = 1; index <= 4; index++) {
+        await window.document.querySelector(`.about-cube${index}`).classList.add('cubeIn');
+      }
       await window.document.querySelector(`.about_heading`).classList.add('about-animation');
-      await window.document.querySelector(`.about_content`).classList.add('about-animation');
       for (let index = 1; index <= 3; index++) {
         await window.document.querySelector(`.about_img_${index}`).classList.add('about-animation');
       }
-      for (let index = 1; index <= 6; index++) {
-        await window.document.querySelector(`.bullet_${index}`).classList.add('about-animation');
-      }
-      for (let index = 1; index <= 4; index++) {
-          await window.document.querySelector(`.about-cube${index}`).classList.add('cubeIn');
-      }
+      setTimeout(async () => {
+        await window.document.querySelector(`.about_content`).classList.add('about-animation');
+      }, 300);
+      setTimeout(async () => {
+        for (let index = 1; index <= 6; index++) {
+          await window.document.querySelector(`.bullet_${index}`).classList.add('about-animation');
+        }
+      }, 600);
       first=false;
     }
 }
 
 const About = () => {
+  useEffect(() => {
+    if(window.pageYOffset >=1000) {
+      enterEffectAbout();
+    }
+  });
   return (
       <div id="about" className="about">
         <ScrollTrigger onEnter={enterEffectAbout}>

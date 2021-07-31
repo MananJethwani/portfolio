@@ -1,5 +1,9 @@
+import ScrollTrigger from 'react-scroll-trigger';
+import React, { useEffect } from 'react';
 import parse from 'html-react-parser';
 import {useState} from 'react';
+let first=true;
+
 const data = [
     {
         heading: "Google Summer of Code <span class='green'>@kiwix</span>",
@@ -26,16 +30,23 @@ const data = [
         <li>Collaborated with the programming club@IIITDMJ</li></ul>`
     },
     {
-        heading: "Google Summer of Code <span class='green'>@kiwix</span>",
-        date: "Jun - Aug 2021",
+        heading: "5 star at codechef",
+        date: "",
         content: `<ul>
-        <li>Part of GSOC 2021 under Kiwix organisation comprising of 1286 students selected out of over 7000 initial applications.</li><br />
-        <li>Collaborating with a diverse team in a remote setup to deliver solutions to real-world problems powered by the latest technologies.</li><br />
-        <li>Improved kiwix-serve UI with functionality like dynamic loading using OPDS format and filters.</li></ul>`
+        <li>Participated in various algorithm based competition and earned 5* ratting on codechef(2051)</li><br />
+        <li>Acheived a global rank of 3766 on codechef</li></ul>`
     },
 ]
 
-
+async function enterEffectExp() {
+    if(first) {
+        await window.document.querySelector(`.exp-block`).classList.add('about-animation');
+        for (let index = 1; index <= 4; index++) {
+            await window.document.querySelector(`.exp-cube${index}`).classList.add('cubeIn');
+        }
+        first=false;
+      }
+}
 
 const Exp = () => {
     const [selected, setSelected] = useState(0);
@@ -45,24 +56,31 @@ const Exp = () => {
         document.getElementsByClassName(`exp-nav-${index + 1}`)[0].style.color = `#01DC99`;
         return 0;
     }
+    useEffect(() => {
+        if(window.pageYOffset >=2000) {
+          enterEffectExp();
+        }
+    });
     return(
         <div id="experience" className="exp-block">
-            <img src={require("../static/cube8.svg").default} className="exp-cube1" alt=""/>
-            <img src={require("../static/cube2.svg").default} className="exp-cube2" alt=""/>
-            <img src={require("../static/cube2.svg").default} className="exp-cube3" alt=""/>
-            <img src={require("../static/cube2.svg").default} className="exp-cube4" alt=""/>
-            <h1 className="exp-heading">Acheivements and experiences</h1>
-            <div className="exp-line-1"></div>
-            <div className="exp-line-2"></div>
-            <div className="exp-nav-1 exp-nav" onClick={() => {select(0)}} style={{color: `#01DC99`}}>GSOC 2021</div>
-            <div className="exp-nav-2 exp-nav" onClick={() => {select(1)}} style={{color: `#3B3742`}}>Co-coordinator TPC</div>
-            <div className="exp-nav-3 exp-nav" onClick={() => {select(2)}} style={{color: `#3B3742`}}>Open Source</div>
-            <div className="exp-nav-4 exp-nav" onClick={() => {select(3)}} style={{color: `#3B3742`}}>5 star at codechef</div>
-            <div className="exp-content">
-                <div className="exp-content-heading">{parse(data[selected].heading)}</div>
-                <div className="exp-content-date">{parse(data[selected].date)}</div>
-                <div className="exp-content-inner">{parse(data[selected].content)}</div>
-            </div>
+            <ScrollTrigger onEnter={enterEffectExp}>
+                <img src={require("../static/cube8.svg").default} className="exp-cube1" alt=""/>
+                <img src={require("../static/cube2.svg").default} className="exp-cube2" alt=""/>
+                <img src={require("../static/cube2.svg").default} className="exp-cube3" alt=""/>
+                <img src={require("../static/cube2.svg").default} className="exp-cube4" alt=""/>
+                <h1 className="exp-heading">Acheivements and experiences</h1>
+                <div className="exp-line-1"></div>
+                <div className="exp-line-2"></div>
+                <div className="exp-nav-1 exp-nav" onClick={() => {select(0)}} style={{color: `#01DC99`}}>GSOC 2021</div>
+                <div className="exp-nav-2 exp-nav" onClick={() => {select(1)}} style={{color: `#3B3742`}}>Co-coordinator TPC</div>
+                <div className="exp-nav-3 exp-nav" onClick={() => {select(2)}} style={{color: `#3B3742`}}>Open Source</div>
+                <div className="exp-nav-4 exp-nav" onClick={() => {select(3)}} style={{color: `#3B3742`}}>5 star at codechef</div>
+                <div className="exp-content">
+                    <div className="exp-content-heading">{parse(data[selected].heading)}</div>
+                    <div className="exp-content-date">{parse(data[selected].date)}</div>
+                    <div className="exp-content-inner">{parse(data[selected].content)}</div>
+                </div>
+            </ScrollTrigger>
         </div>
     )
 }
