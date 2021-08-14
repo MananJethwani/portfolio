@@ -71,14 +71,18 @@ const Exp = () => {
                 <h1 className="exp-heading">Acheivements and experiences</h1>
                 <div className="exp-line-1"></div>
                 <div className="exp-line-2"></div>
-                <div className="exp-nav-1 exp-nav" onClick={() => {select(0)}} style={{color: `#01DC99`}}>GSOC 2021</div>
-                <div className="exp-nav-2 exp-nav" onClick={() => {select(1)}} style={{color: `#3B3742`}}>Co-coordinator TPC</div>
-                <div className="exp-nav-3 exp-nav" onClick={() => {select(2)}} style={{color: `#3B3742`}}>Open Source</div>
-                <div className="exp-nav-4 exp-nav" onClick={() => {select(3)}} style={{color: `#3B3742`}}>5 star at codechef</div>
-                <div className="exp-content">
-                    <div className="exp-content-heading">{parse(data[selected].heading)}</div>
-                    <div className="exp-content-date">{parse(data[selected].date)}</div>
-                    <div className="exp-content-inner">{parse(data[selected].content)}</div>
+                <div className="exp-nav-wrapper">
+                    <div className="exp-nav-1 exp-nav" onClick={() => {select(0)}} style={{color: `#01DC99`}}>GSOC 2021</div>
+                    <div className="exp-nav-2 exp-nav" onClick={() => {select(1)}} style={{color: `#3B3742`}}>Co-coordinator TPC</div>
+                    <div className="exp-nav-3 exp-nav" onClick={() => {select(2)}} style={{color: `#3B3742`}}>Open Source</div>
+                    <div className="exp-nav-4 exp-nav" onClick={() => {select(3)}} style={{color: `#3B3742`}}>5 star at codechef</div>
+                </div>
+                <div className="exp-content-wrapper">
+                    <div className="exp-content">
+                        <div className="exp-content-heading">{parse(data[selected].heading)}</div>
+                        <div className="exp-content-date">{parse(data[selected].date)}</div>
+                        <div className="exp-content-inner">{parse(data[selected].content)}</div>
+                    </div>
                 </div>
             </ScrollTrigger>
         </div>
